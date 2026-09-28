@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin | SVREC Academic Hub</title><link rel="stylesheet" href="style.css"></head>
+<body><div id="nav"></div>
+<main class="container">
+  <h1>Admin dashboard</h1>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="view"></div>
+</main>
+<dialog id="dlg"><form id="dform" novalidate><h2 id="dtitle"></h2><div id="dfields"></div><div id="derr"></div>
+  <div class="actions"><button class="btn" id="dsave">Save</button><button type="button" class="btn ghost" id="dcancel">Cancel</button></div></form></dialog>
+<div id="footer"></div>
+<script src="config.js"></script><script src="common.js"></script><script src="demo.js"></script><script src="api.js"></script>
+<script src="admin.js"></script>
+<script>renderNav('admin.html');</script></body></html>
