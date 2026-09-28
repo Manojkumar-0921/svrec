@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home | SVREC Academic Hub</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div id="nav"></div>
+<header class="hero"><div class="container">
+  <h1>SVREC Academic Hub</h1>
+  <p class="lead"><strong>Learn smarter. Score better.</strong></p>
+  <p class="lead muted">One place for SVR Engineering College students to find syllabus, study materials, previous question papers and important questions, organised by department and semester.</p>
+  <div class="actions"><a class="btn" href="login.html">Student Login</a><a class="btn ghost" href="departments.html">Explore Departments</a></div>
+</div></header>
+<main class="container">
+  <h2 class="section-title">What you can find</h2>
+  <div class="grid">
+    <div class="card"><h3>Syllabus</h3><p class="muted">Unit-wise syllabus for every subject.</p></div>
+    <div class="card"><h3>Study Materials</h3><p class="muted">Notes and PDFs shared by faculty and seniors.</p></div>
+    <div class="card"><h3>Previous Papers</h3><p class="muted">Past exam papers sorted by year.</p></div>
+    <div class="card"><h3>Important Questions</h3><p class="muted">Frequently asked questions with marks.</p></div>
+  </div>
+  <h2 class="section-title">Departments</h2>
+  <div class="grid" id="depts"></div>
+</main>
+<div id="footer"></div>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/demo.js"></script><script src="js/api.js"></script>
+<script>
+(async()=>{const box=document.getElementById("depts");box.innerHTML=loadingHtml();
+try{const d=await apiGet("/api/departments");box.innerHTML=d.map(x=>`<a class="card" href="departments.html?dept=${x.id}"><span class="tag">${esc(x.code)}</span><h3 style="margin-top:.5rem">${esc(x.name)}</h3></a>`).join("")||emptyHtml("No departments yet.");}
+catch(e){box.innerHTML=errorHtml(e.message);}})();</script>
+<script>renderNav('index.html');</script></body></html>

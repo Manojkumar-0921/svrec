@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard | SVREC Academic Hub</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div id="nav"></div>
+<main class="container">
+  <h1 id="hello">Dashboard</h1><p class="muted" id="meta"></p>
+  <form class="searchbar" action="subjects.html" role="search"><input name="q" placeholder="Search subjects, materials, papers, questions" aria-label="Search" required><button class="btn">Search</button></form>
+  <div class="grid" id="quick"></div>
+  <h2 class="section-title">Recently added materials</h2><div id="mats">Loading…</div>
+  <h2 class="section-title">Previous papers</h2><div id="papers"></div>
+  <h2 class="section-title">Important questions</h2><div id="qs"></div>
+</main>
+<div id="footer"></div>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/demo.js"></script><script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+<script>renderNav('dashboard.html');</script></body></html>
